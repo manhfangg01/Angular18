@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderLayoutComponent } from './shared/header-layout/header-layout-component';
-
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderLayoutComponent],
+  imports: [RouterOutlet, HeaderLayoutComponent, FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -29,8 +29,11 @@ export class AppComponent {
     this.clickMessage = 'You click I say hello';
   }
   updateField(): void {
-    alert('Hello Ku');
+    console.log('Hello Ku');
   }
+
+  // #Bai8: Two-way-Binding
+  bindingMessage = '';
 }
 
 // File chứa các import (Component xử lý các logic, nhúng file)

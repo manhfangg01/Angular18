@@ -20,6 +20,13 @@
   <input type="text" (keyup)="updateField()" />
 
   <!-- End #7 End -->
+
+  <!-- Start #8 Start -->
+  <div>
+    Two-Way-Binding Setting: <input type="text" [(ngModel)]="bindingMessage" />
+  </div>
+  Message #8: {{ bindingMessage }}
+  <!-- End #8 End -->
 </main>
 
 <router-outlet />
