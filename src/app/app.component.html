@@ -13,20 +13,58 @@
   /> -->
   <!-- Start #6 Start -->
   <!-- Start #7 Start -->
-  <button (click)="handleClickMe()">{{ nameBtn }}</button>
+  <!-- <button (click)="handleClickMe()">{{ nameBtn }}</button>
 
   <div>{{ clickMessage }}</div>
 
-  <input type="text" (keyup)="updateField()" />
+  <input type="text" (keyup)="updateField()" /> -->
 
   <!-- End #7 End -->
 
   <!-- Start #8 Start -->
-  <div>
+  <!-- <div>
     Two-Way-Binding Setting: <input type="text" [(ngModel)]="bindingMessage" />
   </div>
-  Message #8: {{ bindingMessage }}
+  Message #8: {{ bindingMessage }} -->
   <!-- End #8 End -->
+
+  <!--Start #9 Start-->
+  <div class="wrapper-cart">
+    <h1>Shopping Cart</h1>
+    <div class="group-cart">
+      <div class="header-cart">
+        <div class="col-1">Image</div>
+        <div class="col-2">Name</div>
+        <div class="col-3">Price</div>
+        <div class="col-4">Action</div>
+      </div>
+      <div class="body-cart">
+        <div class="row-cart">
+          <div class="col-1">
+            <img
+              src="assets/images/shoe-1.png"
+              alt=""
+              width="60px"
+              height="auto"
+            />
+          </div>
+          <div class="col-2">Good Shoe-1</div>
+          <div class="col-3">400$</div>
+          <div class="col-4">
+            <div class="btn-main">
+              <img
+                src="assets/images/trash.png"
+                alt=""
+                width="50px"
+                height="auto"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--End #9 End-->
 </main>
 
 <router-outlet />
