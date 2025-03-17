@@ -1,0 +1,23 @@
+Angular là framework frontend ra đời đầu tiên (Được Google chống lưng)
+- Sử dụng "typescript" là ngôn ngữ chính(Ngôn ngữ hướng đối tượng trong khi JS là ngôn ngữ hướng thủ tục) giúp phát triển web một cách có cấu trúc, dễ bảo trì và mở rộng
+- Cung cấp khả năng two-way data biding giữa Model và View
+
+* Two-way data biding: Two-way data binding trong Angular cho phép dữ liệu được đồng bộ hóa giữa component (logic) và template (giao diện). Khi dữ liệu thay đổi trong component, giao diện sẽ cập nhật ngay lập tức, và ngược lại.
+
+- Route Angular: Dạng cây dữ liệu 
+
+- Nhược điểm: 
+  + Không có Virtual DOM như React -> Cập nhật DOM thực có phần chậm hơn  (Real DOM và Virtual DOM là 2 khái niệm khác nhau)
+  + Độ phức tạo cao(Framework rất lớn, phát triển dài) --> Bắt buộc phải tìm hiểu chuyên sâu
+
+
+
++ Real DOM: xài HTML 100%
++ Virtual DOM: Sử dụng các view Engine
+
+
+
+3 thành phần chính 
+  1. app.component.html: HTML thuần (Khung)
+  2. app.component.css: Viết style (Màu sắc hình ảnh)
+  3. app.component.ts: Viết logic và quản lý components

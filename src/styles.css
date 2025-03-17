@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+/*Viết style ở đây */
+.main {
+  background-color: rebeccapurple;
+  color: red;
+}
