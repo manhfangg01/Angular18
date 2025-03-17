@@ -18,12 +18,7 @@
             "browser": "src/main.ts",
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
+            "assets": ["src/assets"],
             "styles": ["src/styles.css"],
             "scripts": [],
             "server": "src/main.server.ts",
@@ -76,7 +71,12 @@
           "options": {
             "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
-            "assets": ["src/assets"],
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
+            ],
             "styles": ["src/styles.css"],
             "scripts": []
           }
@@ -85,6 +85,6 @@
     }
   },
   "cli": {
-    "analytics": "ee33295b-c320-43de-919e-62d50cbbd3b5"
+    "analytics": "1ca6312a-83a2-406c-9dcb-fbee4d7689ae"
   }
 }
