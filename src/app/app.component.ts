@@ -20,6 +20,17 @@ export class AppComponent {
 
   // Attributes
   contentImage = 'Hello World';
+
+  // #Bai7: Event
+  nameBtn = 'Click Me!';
+  clickMessage = '';
+
+  handleClickMe(): void {
+    this.clickMessage = 'You click I say hello';
+  }
+  updateField(): void {
+    alert('Hello Ku');
+  }
 }
 
 // File chứa các import (Component xử lý các logic, nhúng file)

@@ -1,6 +1,7 @@
 <main class="main">
   <header-layout></header-layout>
-  <div>{{ title }}</div>
+  <!-- Start #6 Start -->
+  <!-- <div>{{ title }}</div>
   <div>Something like {{ obj.ten }}</div>
   <div>Tuoi: {{ obj.tuoi - 2000 }}</div>
 
@@ -9,7 +10,16 @@
     src="assets/images/shopping-cart.png"
     alt=""
     title="Logo {{ contentImage }}"
-  />
+  /> -->
+  <!-- Start #6 Start -->
+  <!-- Start #7 Start -->
+  <button (click)="handleClickMe()">{{ nameBtn }}</button>
+
+  <div>{{ clickMessage }}</div>
+
+  <input type="text" (keyup)="updateField()" />
+
+  <!-- End #7 End -->
 </main>
 
 <router-outlet />
