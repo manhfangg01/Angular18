@@ -1,5 +1,15 @@
 <main class="main">
   <header-layout></header-layout>
+  <div>{{ title }}</div>
+  <div>Something like {{ obj.ten }}</div>
+  <div>Tuoi: {{ obj.tuoi - 2000 }}</div>
+
+  <button [disabled]="isDisable">Gayyy</button>
+  <img
+    src="assets/images/shopping-cart.png"
+    alt=""
+    title="Logo {{ contentImage }}"
+  />
 </main>
 
 <router-outlet />
