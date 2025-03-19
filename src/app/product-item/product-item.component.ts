@@ -27,4 +27,10 @@ export class ProductItemComponent {
     // console.log(id);
     this.dataEvent.emit(id);
   };
+  get totalPrice(): number {
+    const sum = this.products.reduce((total, item) => {
+      return total + item.price;
+    }, 0);
+    return sum;
+  }
 }
