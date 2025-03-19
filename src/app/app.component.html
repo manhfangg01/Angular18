@@ -30,7 +30,10 @@
 
   <!--Start #9 Start-->
   <div class="wrapper-cart">
+    <div *ngIf="isVisible">Hello world</div>
+    <!-- Nếu *ngIf=false -> bị xóa khỏi cây DOM(Bị comment lại)-->
     <h1>Shopping Cart</h1>
+    <!-- [ngClass]="{ active: isActive }"-->
     <div class="group-cart">
       <div class="header-cart">
         <div class="col-1">Image</div>

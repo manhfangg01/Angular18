@@ -13,6 +13,7 @@ h1 {
   text-align: center;
   text-transform: uppercase;
   font-weight: 600;
+  /* display: none; */
 }
 
 .wrapper-cart {
@@ -91,4 +92,8 @@ h1 {
 
 .btn-main:hover {
   transform: scale(1.1);
+}
+
+.active {
+  display: block;
 }

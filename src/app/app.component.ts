@@ -4,7 +4,7 @@ import { HeaderLayoutComponent } from './shared/header-layout/header-layout-comp
 import { FormsModule } from '@angular/forms';
 import { currencyPipe } from './shared/header-layout/pipes/CurrencyPipe.pipe';
 import { uppercasePipe } from './shared/header-layout/pipes/UpperCasePipe.pipe';
-import { NgFor } from '@angular/common';
+import { NgClass, NgFor, NgIf } from '@angular/common';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -15,6 +15,8 @@ import { NgFor } from '@angular/common';
     currencyPipe,
     uppercasePipe,
     NgFor,
+    // NgClass,
+    NgIf,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
@@ -52,6 +54,10 @@ export class AppComponent {
     { name: 'Nike2', price: 40000000, image: 'assets/images/shoe-3.jpg' },
     { name: 'Nike3', price: 10000000000, image: 'assets/images/shoe-4.jpg' },
   ];
+
+  // #Bai12
+  // isActive = true;
+  isVisible = false;
 }
 
 // File chứa các import (Component xử lý các logic, nhúng file)

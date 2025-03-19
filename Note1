@@ -21,3 +21,19 @@ Angular là framework frontend ra đời đầu tiên (Được Google chống l
   1. app.component.html: HTML thuần (Khung)
   2. app.component.css: Viết style (Màu sắc hình ảnh)
   3. app.component.ts: Viết logic và quản lý components
+
+
+4. Pipes
+  Dùng để chuyển đổi giá trị bằng logic theo ý của lập trình viên
+
+5. List-Render (ngFor)
+  - Dùng để lặp danh sách hiển thị lên view(nó giống <c:forEach> của jsp)
+6. Directive(3 loại)
+  -  Component: Cốt lõi của mọi ứng dụng Angular
+        + Template HTML: Được sử dụng để tạo thành các UI-compenent tách biệt với nhau
+  - Structural: Được dùng để thay đổi cấu trúc DOM(Thêm, xóa DOM-component)
+        + ngIf, ngFor, ngSwitch, ...
+        + Dùng dấu "*"
+  - Attribute: Thay đổi giao diện và hành vi của 1 phần tử nhưng không thay đổi cấu trúc của nó(Chỉ có thể sửa chứ không thể xóa khỏi cây DOM, cùng lắm là ẩn đi)
+        + ngClass, ngStyle, hidden, disable 
+        + Dùng dấu "[]"
