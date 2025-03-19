@@ -1,7 +1,5 @@
-<main class="main">
-  <header-layout></header-layout>
-  <!-- Start #6 Start -->
-  <!-- <div>{{ title }}</div>
+<!-- Start #6 Start -->
+<!-- <div>{{ title }}</div>
   <div>Something like {{ obj.ten }}</div>
   <div>Tuoi: {{ obj.tuoi - 2000 }}</div>
 
@@ -11,66 +9,30 @@
     alt=""
     title="Logo {{ contentImage }}"
   /> -->
-  <!-- Start #6 Start -->
-  <!-- Start #7 Start -->
-  <!-- <button (click)="handleClickMe()">{{ nameBtn }}</button>
+<!-- Start #6 Start -->
+<!-- Start #7 Start -->
+<!-- <button (click)="handleClickMe()">{{ nameBtn }}</button>
 
   <div>{{ clickMessage }}</div>
 
   <input type="text" (keyup)="updateField()" /> -->
 
-  <!-- End #7 End -->
+<!-- End #7 End -->
 
-  <!-- Start #8 Start -->
-  <!-- <div>
+<!-- Start #8 Start -->
+<!-- <div>
     Two-Way-Binding Setting: <input type="text" [(ngModel)]="bindingMessage" />
   </div>
   Message #8: {{ bindingMessage }} -->
-  <!-- End #8 End -->
+<!-- End #8 End -->
 
-  <!--Start #9 Start-->
-  <div class="wrapper-cart">
-    <div *ngIf="isVisible">Hello world</div>
-    <!-- Nếu *ngIf=false -> bị xóa khỏi cây DOM(Bị comment lại)-->
-    <h1>Shopping Cart</h1>
-    <!-- [ngClass]="{ active: isActive }"-->
-    <div class="group-cart">
-      <div class="header-cart">
-        <div class="col-1">Image</div>
-        <div class="col-2">Name</div>
-        <div class="col-3">Price</div>
-        <div class="col-4">Action</div>
-      </div>
-      <div class="body-cart">
-        <div class="row-cart" *ngFor="let item of products">
-          <div class="col-1">
-            <a [routerLink]="['/detail', item.id]">
-              <img
-                src="{{ item.image }}"
-                alt="Good Shoe-1"
-                width="80px"
-                height="auto"
-              />
-            </a>
-          </div>
-          <div class="col-2">{{ item.name | uppercasePipe }}</div>
-          <div class="col-3">{{ item.price | currencyPipe }}</div>
-          <div class="col-4">
-            <div class="btn-main">
-              <img
-                src="assets/images/trash.png"
-                alt="Delete Item"
-                width="30px"
-                height="auto"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--End #9 End-->
-</main>
+<!--Start #9 Start-->
+<div class="wrapper-cart">
+  <div *ngIf="isVisible">Hello world</div>
+  <!-- Nếu *ngIf=false -> bị xóa khỏi cây DOM(Bị comment lại)-->
+  <h1>Shopping Cart</h1>
+  <!-- [ngClass]="{ active: isActive }"-->
 
-<router-outlet />
-<!-- Không được xóa-->
+  <app-product-item [products]="products"></app-product-item>
+</div>
+<!--End #9 End-->

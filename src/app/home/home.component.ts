@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { currencyPipe } from '../shared/pipes/CurrencyPipe.pipe';
 import { uppercasePipe } from '../shared/pipes/UpperCasePipe.pipe';
 import { NgClass, NgFor, NgIf } from '@angular/common';
+import { ProductItems } from '../types/productItem';
+import { ProductItemComponent } from '../product-item/product-item.component';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -18,6 +20,7 @@ import { NgClass, NgFor, NgIf } from '@angular/common';
     // NgClass,
     NgIf,
     RouterLink,
+    ProductItemComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
@@ -49,7 +52,7 @@ export class HomeComponent {
   bindingMessage = '';
 
   // #Bai11
-  products = [
+  products: ProductItems[] = [
     { id: 1, name: 'Nike1', price: 4000000, image: 'assets/images/shoe-1.png' },
     {
       id: 2,
