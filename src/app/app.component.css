@@ -1,10 +1,81 @@
-/*Viết style ở đây */
+/* cart.css */
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
 h1 {
-  padding: 3rem 0;
+  padding: 2rem 0;
   margin: 0;
   color: white;
   text-align: center;
   text-transform: uppercase;
+  font-weight: 600;
+}
+
+.wrapper-cart {
+  background-image: linear-gradient(to right, #c50ac5, #9237f4);
+  min-height: 100vh;
+}
+
+.group-cart {
+  width: 80%;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding-bottom: 1rem;
+  margin: auto;
+}
+
+.header-cart {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #656967;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: white;
+}
+
+.col-1 {
+  flex: 1;
+  text-align: center;
+}
+.col-2 {
+  flex: 1.5;
+  text-align: center;
+}
+.col-3 {
+  flex: 1;
+  text-align: center;
+}
+.col-4 {
+  flex: 0.5;
+  text-align: center;
+}
+
+.body-cart {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.row-cart {
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9f9f9;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.row-cart:hover {
+  background: #eaeaea;
 }
 
 .btn-main {
@@ -15,57 +86,9 @@ h1 {
   align-items: center;
   border-radius: 6px;
   cursor: pointer;
+  transition: transform 0.2s;
 }
 
-.main {
-  font-family: "Montserrat", serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-}
-
-.wrapper-cart {
-  background-image: linear-gradient(to right, #c50ac5, #9237f4);
-  height: calc(100vh - 96.8px); /* Thêm khoảng trắng */
-}
-
-.group-cart {
-  width: 75%;
-  background-color: aliceblue;
-  margin: auto;
-  border-radius: 4px;
-}
-
-.header-cart {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem;
-  background-color: #656967;
-  text-transform: uppercase;
-  font-weight: 600;
-}
-.col-1 {
-  flex: 1;
-}
-.col-2 {
-  flex: 1.5;
-}
-.col-3 {
-  flex: 1;
-}
-.col-4 {
-  flex: 0.5;
-}
-.body-cart {
-  display: flex;
-  flex-direction: column;
-  row-gap: 1rem;
-  margin-top: 1rem;
-  padding: 1rem;
-}
-
-.row-cart {
-  display: flex;
-  padding: 1rem;
-  justify-content: space-between;
-  align-items: center;
+.btn-main:hover {
+  transform: scale(1.1);
 }

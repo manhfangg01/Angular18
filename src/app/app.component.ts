@@ -2,10 +2,18 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderLayoutComponent } from './shared/header-layout/header-layout-component';
 import { FormsModule } from '@angular/forms';
+import { currencyPipe } from './shared/header-layout/pipes/CurrencyPipe.pipe';
+import { uppercasePipe } from './shared/header-layout/pipes/UpperCasePipe.pipe';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderLayoutComponent, FormsModule],
+  imports: [
+    RouterOutlet,
+    HeaderLayoutComponent,
+    FormsModule,
+    currencyPipe,
+    uppercasePipe,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
