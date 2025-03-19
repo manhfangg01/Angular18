@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { HeaderLayoutComponent } from '../shared/header-layout/header-layout-component';
 import { FormsModule } from '@angular/forms';
-import { currencyPipe } from '../shared/header-layout/pipes/CurrencyPipe.pipe';
-import { uppercasePipe } from '../shared/header-layout/pipes/UpperCasePipe.pipe';
+import { currencyPipe } from '../shared/pipes/CurrencyPipe.pipe';
+import { uppercasePipe } from '../shared/pipes/UpperCasePipe.pipe';
 import { NgClass, NgFor, NgIf } from '@angular/common';
 @Component({
   selector: 'app-home',
@@ -17,6 +17,7 @@ import { NgClass, NgFor, NgIf } from '@angular/common';
     NgFor,
     // NgClass,
     NgIf,
+    RouterLink,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
@@ -49,10 +50,25 @@ export class HomeComponent {
 
   // #Bai11
   products = [
-    { name: 'Nike1', price: 4000000, image: 'assets/images/shoe-1.png' },
-    { name: 'Adidas1', price: 5000000, image: 'assets/images/shoe-2.jpg' },
-    { name: 'Nike2', price: 40000000, image: 'assets/images/shoe-3.jpg' },
-    { name: 'Nike3', price: 10000000000, image: 'assets/images/shoe-4.jpg' },
+    { id: 1, name: 'Nike1', price: 4000000, image: 'assets/images/shoe-1.png' },
+    {
+      id: 2,
+      name: 'Adidas1',
+      price: 5000000,
+      image: 'assets/images/shoe-2.jpg',
+    },
+    {
+      id: 3,
+      name: 'Nike2',
+      price: 40000000,
+      image: 'assets/images/shoe-3.jpg',
+    },
+    {
+      id: 4,
+      name: 'Nike3',
+      price: 10000000000,
+      image: 'assets/images/shoe-4.jpg',
+    },
   ];
 
   // #Bai12

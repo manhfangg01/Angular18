@@ -44,12 +44,14 @@
       <div class="body-cart">
         <div class="row-cart" *ngFor="let item of products">
           <div class="col-1">
-            <img
-              src="{{ item.image }}"
-              alt="Good Shoe-1"
-              width="80px"
-              height="auto"
-            />
+            <a [routerLink]="['/detail', item.id]">
+              <img
+                src="{{ item.image }}"
+                alt="Good Shoe-1"
+                width="80px"
+                height="auto"
+              />
+            </a>
           </div>
           <div class="col-2">{{ item.name | uppercasePipe }}</div>
           <div class="col-3">{{ item.price | currencyPipe }}</div>
