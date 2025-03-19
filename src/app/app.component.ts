@@ -4,6 +4,7 @@ import { HeaderLayoutComponent } from './shared/header-layout/header-layout-comp
 import { FormsModule } from '@angular/forms';
 import { currencyPipe } from './shared/header-layout/pipes/CurrencyPipe.pipe';
 import { uppercasePipe } from './shared/header-layout/pipes/UpperCasePipe.pipe';
+import { NgFor } from '@angular/common';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -13,6 +14,7 @@ import { uppercasePipe } from './shared/header-layout/pipes/UpperCasePipe.pipe';
     FormsModule,
     currencyPipe,
     uppercasePipe,
+    NgFor,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
@@ -42,6 +44,14 @@ export class AppComponent {
 
   // #Bai8: Two-way-Binding
   bindingMessage = '';
+
+  // #Bai11
+  products = [
+    { name: 'Nike1', price: 4000000, image: 'assets/images/shoe-1.png' },
+    { name: 'Adidas1', price: 5000000, image: 'assets/images/shoe-2.jpg' },
+    { name: 'Nike2', price: 40000000, image: 'assets/images/shoe-3.jpg' },
+    { name: 'Nike3', price: 10000000000, image: 'assets/images/shoe-4.jpg' },
+  ];
 }
 
 // File chứa các import (Component xử lý các logic, nhúng file)
