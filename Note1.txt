@@ -37,3 +37,8 @@ Angular là framework frontend ra đời đầu tiên (Được Google chống l
   - Attribute: Thay đổi giao diện và hành vi của 1 phần tử nhưng không thay đổi cấu trúc của nó(Chỉ có thể sửa chứ không thể xóa khỏi cây DOM, cùng lắm là ẩn đi)
         + ngClass, ngStyle, hidden, disable 
         + Dùng dấu "[]"
+
+7. app.routes.ts: Nơi chứa các đường dẫn. vd: path:'' -> home('\')
+    - app.component.html là nơi chứa Component cha
+      + <router-outlet /> -> hiển thị Component con
+      
