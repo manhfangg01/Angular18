@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { currencyPipe } from '../shared/pipes/CurrencyPipe.pipe';
@@ -22,4 +22,9 @@ import { ProductItems } from '../types/productItem';
 })
 export class ProductItemComponent {
   @Input() products: ProductItems[] = [];
+  @Output() dataEvent = new EventEmitter<number>(); // -> Truyền lên number chính là id
+  handleDelete = (id: number) => {
+    // console.log(id);
+    this.dataEvent.emit(id);
+  };
 }

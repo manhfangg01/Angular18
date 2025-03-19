@@ -33,6 +33,9 @@
   <h1>Shopping Cart</h1>
   <!-- [ngClass]="{ active: isActive }"-->
 
-  <app-product-item [products]="products"></app-product-item>
+  <app-product-item
+    [products]="products"
+    (dataEvent)="handleDelete($event)"
+  ></app-product-item>
 </div>
 <!--End #9 End-->

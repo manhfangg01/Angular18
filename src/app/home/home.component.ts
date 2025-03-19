@@ -77,6 +77,14 @@ export class HomeComponent {
   // #Bai12
   // isActive = true;
   isVisible = false;
+
+  //#Bai17
+  handleDelete = (id: number) => {
+    const productIndex = this.products.findIndex((item) => item.id == id);
+    if (productIndex !== -1) {
+      this.products.splice(productIndex, 1);
+    }
+  };
 }
 
 // File chứa các import (Component xử lý các logic, nhúng file)
