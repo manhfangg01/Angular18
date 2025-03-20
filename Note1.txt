@@ -46,3 +46,17 @@ Angular là framework frontend ra đời đầu tiên (Được Google chống l
   - Truyền dữ luện một chiều: từ component cha đến component con
   - Không thay đổi được dữ liệu: component con không thể sửa các dữ liệu truyền xuống bằng Props
   - Hỗ trợ mọi loại dữ liệu: string, number, object, array, function
+
+
+9. Lifecycle Hocks (vòng đời của 1 component)
+- Creation
+  $1: Constructor: là hàm đầu tiên chạy -> Dùng để khởi tạo dữ liệu default cho các biến hoặc giá trị từ những nơi khác vào
+- Change Detection
+  $2: ngOnIt: Hàm này sẽ được gọi 1 lần ngay khi tất cả được khởi tạo xong
+  $3:  ngDoCheck: chạy lại bất cứ khi nào có điều gì thay đổi - Chỉ sử dụng trong những TH đặc biệt - Lưu ý: hủy đi ngay khi không cần
+  $4: ngOnchanges: sẽ được cập nhật và chạy lại nếu props có sự thay đổi(recommended)(Chỉ sử dụng trong component con)
+    + Hàm này sẽ được tạo cùng với 1 đối số là changes(có tác dụng ghi nhận các sự thay đổi)
+          VD: changes['<variableName>']  .previousValue: giá trị trước đó
+                                         .currentValue: giá trị hiện tại
+                                         .isFirstChange: thường là lần khởi tạo đầu tiên
+      * Lưu ý: thay đổi chỉ được ghi nhận khi biến đó được khởi tạo lại, nếu chỉ thay đổi giá trị thì không tính là thay đổi

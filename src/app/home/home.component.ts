@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  DoCheck,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { HeaderLayoutComponent } from '../shared/header-layout/header-layout-component';
 import { FormsModule } from '@angular/forms';
@@ -81,10 +87,11 @@ export class HomeComponent implements OnInit {
 
   //#Bai17
   handleDelete = (id: number) => {
-    const productIndex = this.products.findIndex((item) => item.id == id);
-    if (productIndex !== -1) {
-      this.products.splice(productIndex, 1);
-    }
+    // const productIndex = this.products.findIndex((item) => item.id == id);
+    // if (productIndex !== -1) {
+    //   this.products.splice(productIndex, 1);
+    // }
+    this.products = this.products.filter((item) => item.id !== id);
   };
 
   // #20 Creation Session
@@ -98,6 +105,10 @@ export class HomeComponent implements OnInit {
     // Manage with API
     console.log('init');
   }
+
+  // ngDoCheck(): void {
+  //   console.log('detect checks');
+  // }
 }
 
 // File chứa các import (Component xử lý các logic, nhúng file)

@@ -1,4 +1,11 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { currencyPipe } from '../shared/pipes/CurrencyPipe.pipe';
@@ -20,7 +27,7 @@ import { ProductItems } from '../types/productItem';
   templateUrl: './product-item.component.html',
   styleUrl: './product-item.component.css',
 })
-export class ProductItemComponent {
+export class ProductItemComponent implements OnChanges {
   @Input() products: ProductItems[] = [];
   @Output() dataEvent = new EventEmitter<number>(); // -> Truyền lên number chính là id
   handleDelete = (id: number) => {
@@ -32,5 +39,11 @@ export class ProductItemComponent {
       return total + item.price;
     }, 0);
     return sum;
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes['products'].previousValue);
+    console.log(changes['products'].currentValue);
+    console.log(changes['products'].firstChange);
+    console.log(changes['products'].isFirstChange);
   }
 }
