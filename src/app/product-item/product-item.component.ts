@@ -3,6 +3,7 @@ import {
   EventEmitter,
   Input,
   OnChanges,
+  OnDestroy,
   Output,
   SimpleChanges,
 } from '@angular/core';
@@ -23,11 +24,12 @@ import { ProductItems } from '../types/productItem';
     // NgClass,
 
     RouterLink,
+    NgIf,
   ],
   templateUrl: './product-item.component.html',
   styleUrl: './product-item.component.css',
 })
-export class ProductItemComponent implements OnChanges {
+export class ProductItemComponent implements OnChanges, OnDestroy {
   @Input() products: ProductItems[] = [];
   @Output() dataEvent = new EventEmitter<number>(); // -> Truyền lên number chính là id
   handleDelete = (id: number) => {
@@ -45,5 +47,9 @@ export class ProductItemComponent implements OnChanges {
     console.log(changes['products'].currentValue);
     console.log(changes['products'].firstChange);
     console.log(changes['products'].isFirstChange);
+  }
+
+  ngOnDestroy(): void {
+    console.log('Component is removed');
   }
 }

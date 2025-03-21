@@ -83,7 +83,7 @@ export class HomeComponent implements OnInit {
 
   // #Bai12
   // isActive = true;
-  isVisible = false;
+  isVisible = true;
 
   //#Bai17
   handleDelete = (id: number) => {
@@ -109,6 +109,10 @@ export class HomeComponent implements OnInit {
   // ngDoCheck(): void {
   //   console.log('detect checks');
   // }
+
+  handleChangeVisible = () => {
+    this.isVisible = false;
+  };
 }
 
 // File chứa các import (Component xử lý các logic, nhúng file)

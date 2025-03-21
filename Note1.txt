@@ -60,3 +60,9 @@ Angular là framework frontend ra đời đầu tiên (Được Google chống l
                                          .currentValue: giá trị hiện tại
                                          .isFirstChange: thường là lần khởi tạo đầu tiên
       * Lưu ý: thay đổi chỉ được ghi nhận khi biến đó được khởi tạo lại, nếu chỉ thay đổi giá trị thì không tính là thay đổi
+
+- Destruction(Thường chỉ xuất hiện trong các dự án lớn yêu cầu tính tối ưu cao)
+  $5 ngOnDestroy(Là đại diện cho giai đoạn này): Hàm này được kích hoạt trước khi 1 component bị xóa khỏi cây DOM
+        + Realtime: Các ứng dụng nhắn tin trực tuyến
+        + API: Gọi API, Khi không sử dụng nữa thì hủy bỏ API đó
+        + Logic(timeOut, interval): Xóa đi các hành động khi thời gian chờ không đủ đáp ứng. VD: Khi đặt thời gian 5 sẽ xảy ra 1 hành động, nhưng 3 giây đã rời khỏi trang web -> hủy đi cái hẹn cũ(5 giây)
