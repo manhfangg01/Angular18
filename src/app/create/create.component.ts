@@ -4,7 +4,7 @@ import { BlogService } from '../../service/BlogService';
 import { ProductItems } from '../types/productItem';
 import { currencyPipe } from '../shared/pipes/CurrencyPipe.pipe';
 import { NgIf } from '@angular/common';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-create',
@@ -14,11 +14,21 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
   styleUrl: './create.component.css',
 })
 export class CreateComponent {
-  name = new FormControl('');
-  price = new FormControl('');
+  product = new FormGroup({
+    name: new FormControl(''),
+    price: new FormControl(''),
+  });
+
+  get name() {
+    return this.product.get('name');
+  }
+  get price() {
+    return this.product.get('price');
+  }
   constructor(private blogService: BlogService) {}
 
   handleAddCart() {
-    console.log(this.name.value);
+    console.log(this.name?.value);
+    console.log(this.price?.value);
   }
 }
