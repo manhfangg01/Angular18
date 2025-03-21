@@ -11,14 +11,20 @@
   >
     <div class="form-control">
       <label for="name">Name:</label>
-      <div><input type="text" /></div>
+      <div><input type="text" id="name" [formControl]="name" /></div>
     </div>
     <div class="form-control">
       <label for="name">Price:</label>
-      <div><input type="text" /></div>
+      <div><input type="text" id="price" [formControl]="price" /></div>
     </div>
     <div class="form-control">
-      <div class="btn-navigation">Add to Cart</div>
+      <div
+        class="btn-navigation"
+        (click)="handleAddCart()"
+        style="padding: 0.8rem; color: #fff; margin-top: 0.4rem"
+      >
+        Add to cart
+      </div>
     </div>
   </div>
 </div>
