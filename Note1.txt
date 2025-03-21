@@ -72,8 +72,21 @@ Angular là framework frontend ra đời đầu tiên (Được Google chống l
 // Tác vụ API
 1. HttpClient là một service trong Angular, dùng để gửi hoặc nhận yêu cầu HTTP(GET, POST, PUT, DELETE, ...) Đến API hoặc máy chủ
 
-// Observable: Theo dõi các luồng dữ liệu bất đồng độ 
-// Các nguồn chính của dữ liệu bất đồng bộ
+// Observable: Theo dõi các luồng dữ liệu bất đồng độ
+  - Một biến có kiểu dữ liệu là Observable<> là biến có thể được theo dõi luồng dữ liệu
+  -> từ đó có thể dùng một biến có kiểu Subscription theo dõi việc đăng kí (subscribe), có thể dùng biến:Subscription để unsubscribed Khi biến đó bị hủy
+
+
+
+
+
+// Http Mapping
+  Khi get API thì có thể gọi hàm pipe(), trong hàm này bạn có thể gọi các hàm như map(), reduce(), filter(), ....
+
+- Các nguồn chính của dữ liệu bất đồng bộ
 1. API
 2. Behavior (Các hành động của người Dùng)
 3.Timer(timeout, interval)
+
+
+

@@ -16,7 +16,8 @@ import { ProductItems } from '../types/productItem';
 import { ProductItemComponent } from '../product-item/product-item.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { BlogService } from '../../service/BlogService';
-import { Subscription } from 'rxjs';
+import { filter, map, Subscription } from 'rxjs';
+import { subscribe } from 'diagnostics_channel';
 
 @Component({
   selector: 'app-home',
@@ -98,26 +99,33 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.products = this.products.filter((item) => item.id !== id);
   };
 
+  getBlogApi: Subscription;
+
   // #20 Creation Session
-  constructor(
-    private blogService: BlogService,
-    private getBlogApi: Subscription
-  ) {
+  constructor(private blogService: BlogService) {
     this.getBlogApi = new Subscription();
   }
 
   ngOnInit(): void {
     console.log('Initialized Component');
-    this.getBlogApi = this.blogService.getBlogs().subscribe(({ data }) => {
-      this.products = data.map((item: any) => {
-        return {
-          ...item, // (...) là spread Operator dùng để sao chép toàn bộ thuộc tính của item vào object mới
-          name: item.title,
-          price: Number(item.body),
-          image: 'assets/images/shoe-2.jpg',
-        };
+
+    this.getBlogApi = this.blogService
+      .getBlogs()
+      .pipe(
+        map(({ data }) =>
+          data.map((item: any) => {
+            return {
+              ...item,
+              name: item.title,
+              price: Number(item.body),
+              image: 'assets/images/shoe-3.jpg',
+            };
+          })
+        )
+      )
+      .subscribe((res) => {
+        this.products = res;
       });
-    });
   }
   ngOnDestroy(): void {
     if (this.getBlogApi) {
