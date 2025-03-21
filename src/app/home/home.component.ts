@@ -2,6 +2,7 @@ import {
   Component,
   DoCheck,
   OnChanges,
+  OnDestroy,
   OnInit,
   SimpleChanges,
 } from '@angular/core';
@@ -15,6 +16,7 @@ import { ProductItems } from '../types/productItem';
 import { ProductItemComponent } from '../product-item/product-item.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { BlogService } from '../../service/BlogService';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -35,7 +37,7 @@ import { BlogService } from '../../service/BlogService';
   styleUrl: './home.component.css',
 })
 // Những biến được khai báo ở đây có thể dụng ở view tương ứng
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
   // text
   title = 'angular-basic-project';
   obj = { ten: 'Manh', tuoi: 20 };
@@ -97,11 +99,16 @@ export class HomeComponent implements OnInit {
   };
 
   // #20 Creation Session
-  constructor(private blogService: BlogService) {}
+  constructor(
+    private blogService: BlogService,
+    private getBlogApi: Subscription
+  ) {
+    this.getBlogApi = new Subscription();
+  }
 
   ngOnInit(): void {
     console.log('Initialized Component');
-    this.blogService.getBlogs().subscribe(({ data }) => {
+    this.getBlogApi = this.blogService.getBlogs().subscribe(({ data }) => {
       this.products = data.map((item: any) => {
         return {
           ...item, // (...) là spread Operator dùng để sao chép toàn bộ thuộc tính của item vào object mới
@@ -112,7 +119,12 @@ export class HomeComponent implements OnInit {
       });
     });
   }
-
+  ngOnDestroy(): void {
+    if (this.getBlogApi) {
+      this.getBlogApi.unsubscribe();
+      console.log('getBlogApi unsubscribed');
+    }
+  }
   handleChangeVisible = () => {
     this.isVisible = false;
   };

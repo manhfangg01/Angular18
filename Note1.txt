@@ -71,3 +71,9 @@ Angular là framework frontend ra đời đầu tiên (Được Google chống l
 
 // Tác vụ API
 1. HttpClient là một service trong Angular, dùng để gửi hoặc nhận yêu cầu HTTP(GET, POST, PUT, DELETE, ...) Đến API hoặc máy chủ
+
+// Observable: Theo dõi các luồng dữ liệu bất đồng độ 
+// Các nguồn chính của dữ liệu bất đồng bộ
+1. API
+2. Behavior (Các hành động của người Dùng)
+3.Timer(timeout, interval)
