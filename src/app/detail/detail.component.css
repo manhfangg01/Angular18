@@ -2,3 +2,8 @@
   background-image: linear-gradient(to right, #d434b0, #8029fc);
   height: calc(100vh - 70px);
 }
+.wrapper-cart div {
+  max-width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
