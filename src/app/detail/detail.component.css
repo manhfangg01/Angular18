@@ -1,6 +1,6 @@
 .wrapper-cart {
   background-image: linear-gradient(to right, #d434b0, #8029fc);
-  height: calc(100vh - 70px);
+  height: calc(100vh - 90px);
 }
 .wrapper-cart div {
   max-width: 100%;
