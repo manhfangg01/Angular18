@@ -66,3 +66,8 @@ Angular là framework frontend ra đời đầu tiên (Được Google chống l
         + Realtime: Các ứng dụng nhắn tin trực tuyến
         + API: Gọi API, Khi không sử dụng nữa thì hủy bỏ API đó
         + Logic(timeOut, interval): Xóa đi các hành động khi thời gian chờ không đủ đáp ứng. VD: Khi đặt thời gian 5 sẽ xảy ra 1 hành động, nhưng 3 giây đã rời khỏi trang web -> hủy đi cái hẹn cũ(5 giây)
+
+
+
+// Tác vụ API
+1. HttpClient là một service trong Angular, dùng để gửi hoặc nhận yêu cầu HTTP(GET, POST, PUT, DELETE, ...) Đến API hoặc máy chủ

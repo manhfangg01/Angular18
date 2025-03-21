@@ -13,6 +13,7 @@ import { uppercasePipe } from '../shared/pipes/UpperCasePipe.pipe';
 import { NgClass, NgFor, NgIf } from '@angular/common';
 import { ProductItems } from '../types/productItem';
 import { ProductItemComponent } from '../product-item/product-item.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -95,24 +96,25 @@ export class HomeComponent implements OnInit {
   };
 
   // #20 Creation Session
-  constructor() {
-    // Run first in all cases
-    // initialize default value
-    console.log('construction');
-  }
+  constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    // Manage with API
-    console.log('init');
+    console.log('Initialized Component');
+    this.http
+      .get<any>('https://ninedev-api.vercel.app/blogs')
+      .subscribe(({ data }) => {
+        this.products = data.map((item: any) => {
+          return {
+            ...item, // (...) là spread Operator dùng để sao chép toàn bộ thuộc tính của item vào object mới
+            name: item.title,
+            price: Number(item.body),
+            image: 'assets/images/shoe-2.jpg',
+          };
+        });
+      });
   }
-
-  // ngDoCheck(): void {
-  //   console.log('detect checks');
-  // }
 
   handleChangeVisible = () => {
     this.isVisible = false;
   };
 }
-
-// File chứa các import (Component xử lý các logic, nhúng file)
