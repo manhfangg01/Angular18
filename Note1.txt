@@ -91,3 +91,16 @@ Angular là framework frontend ra đời đầu tiên (Được Google chống l
 
 
 - Validate Form chỉ áp dụng formGroup (Không áp dụng với formControl )
+
+
+- Component vs LoadComponent
+  + Component
+    ✔ Một template (HTML) để hiển thị nội dung.
+    ✔ Một class (TypeScript) để xử lý logic.
+    ✔ Một CSS file để tạo kiểu cho Component.
+    ✔ Component về thông thường chính là một EAGER LOADING
+      * EAGER LOADING: có nghĩa là tất cả component, module, service... sẽ được tải ngay lập tức khi ứng dụng khởi chạy, ngay cả khi chúng chưa được sử dụng.
+
+  + LoadComponent
+    ✔ Cho phép nạp (lazy load ) một component động mà không cần báo trước trong NgModule
+    ✔ Chỉ tải component khi thực sự cần => giúp tối ưu hiệu suất.
