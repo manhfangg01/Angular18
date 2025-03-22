@@ -90,3 +90,4 @@ Angular là framework frontend ra đời đầu tiên (Được Google chống l
 
 
 
+- Validate Form chỉ áp dụng formGroup (Không áp dụng với formControl )

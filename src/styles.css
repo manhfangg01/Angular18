@@ -38,4 +38,5 @@ h1 {
   align-items: center;
   border-radius: 6px;
   cursor: pointer;
+  border: none;
 }

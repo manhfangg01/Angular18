@@ -1,32 +1,48 @@
 <div class="wrapper-cart">
   <h1>Create Product</h1>
+
   <div
     style="
       width: 70%;
       margin: auto;
-      background-color: #fff;
+      background: #fff;
       padding: 1rem;
       border-radius: 8px;
     "
     [formGroup]="product"
-    ;
   >
     <div class="form-control">
       <label for="name">Name:</label>
-      <div><input type="text" id="name" /></div>
+      <div>
+        <input type="text" id="name" formControlName="name" />
+      </div>
+      <div *ngIf="name?.dirty || name?.touched || isValid1">
+        <div style="color: #a63b3b" *ngIf="name?.hasError('required')">
+          Name is required
+        </div>
+      </div>
     </div>
     <div class="form-control">
-      <label for="name">Price:</label>
-      <div><input type="text" id="price" /></div>
+      <label for="price">Price:</label>
+      <div>
+        <input type="text" id="price" formControlName="price" />
+      </div>
+      <div *ngIf="price?.dirty || price?.touched || isValid2">
+        <!-- ?.dirty: là một thuộc tính của FormControl, trả về true nếu người dùng đã nhập hoặc thay đổi giá trị trong ô input.-->
+        <!-- ?.touched:  là một thuộc tính của FormControl, trả về true nếu ô input đã được focus và mất focus (người dùng đã chạm vào nó ít nhất một lần).-->
+        <div style="color: #a63b3b" *ngIf="price?.hasError('required')">
+          Price is required
+        </div>
+      </div>
     </div>
     <div class="form-control">
-      <div
+      <button
         class="btn-navigation"
         (click)="handleAddCart()"
         style="padding: 0.8rem; color: #fff; margin-top: 0.4rem"
       >
         Add to cart
-      </div>
+      </button>
     </div>
   </div>
 </div>

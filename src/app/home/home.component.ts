@@ -91,13 +91,13 @@ export class HomeComponent implements OnInit, OnDestroy {
   isVisible = true;
 
   //#Bai17
-  handleDelete = (id: number) => {
-    // const productIndex = this.products.findIndex((item) => item.id == id);
-    // if (productIndex !== -1) {
-    //   this.products.splice(productIndex, 1);
-    // }
-    this.products = this.products.filter((item) => item.id !== id);
-  };
+  // handleDelete = (id: number) => {
+  //   // const productIndex = this.products.findIndex((item) => item.id == id);
+  //   // if (productIndex !== -1) {
+  //   //   this.products.splice(productIndex, 1);
+  //   // }
+  //   this.products = this.products.filter((item) => item.id !== id);
+  // };
 
   getBlogApi: Subscription;
 
@@ -135,5 +135,15 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
   handleChangeVisible = () => {
     this.isVisible = false;
+  };
+
+  handleDelete = (id: number) => {
+    this.blogService.deleteBlog(id).subscribe(({ data }: any) => {
+      if (data == 1) {
+        // Data==1 tức là xóa thành công
+        // Data==0 thì là xóa không thành công
+        this.products = this.products.filter((item) => item.id !== id);
+      }
+    });
   };
 }
