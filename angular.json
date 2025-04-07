@@ -18,7 +18,14 @@
             "browser": "src/main.ts",
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
-            "assets": ["src/assets"],
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              },
+              {"glob": "**/*",
+                "input": "src/assets"
+              }],
             "styles": ["src/styles.css"],
             "scripts": [],
             "server": "src/main.server.ts",
